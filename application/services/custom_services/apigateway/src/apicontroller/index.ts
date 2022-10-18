@@ -6,3 +6,4 @@ export * from "./CamundaController";
 export * from "./systemcredentialmanagerController";
 export * from "./UserController";
 export * from "./mobileController";
+export * from "./webviewController";

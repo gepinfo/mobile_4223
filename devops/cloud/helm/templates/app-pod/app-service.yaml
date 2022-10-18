@@ -28,5 +28,9 @@ spec:
     port: {{ .Values.service.mobilegenmanager.port }}
     targetPort: {{ .Values.service.mobilegenmanager.targetPort }}
 
+  - name: {{ .Values.service.webviewgenmanager.name }}
+    port: {{ .Values.service.webviewgenmanager.port }}
+    targetPort: {{ .Values.service.webviewgenmanager.targetPort }}
+
   selector:
     name: {{ .Values.app.prefix }}-app

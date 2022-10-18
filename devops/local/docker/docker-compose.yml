@@ -138,6 +138,7 @@ services:
       - systemcredentialmanager
       - systementry
       - mobilegenmanager
+      - webviewgenmanager
 
     logging:
       driver: "fluentd"
@@ -220,6 +221,22 @@ services:
     container_name: mobilegenmanager-4223
     ports: 
       - 8011:8011
+    env_file: .env
+    depends_on:
+      - mongo
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        fluentd-async-connect: "true"
+        tag: fluent
+
+  webviewgenmanager: 
+    build: ../../../application/services/custom_services/webviewgenmanager
+    image: webviewgenmanager-4223
+    container_name: webviewgenmanager-4223
+    ports: 
+      - 8012:8012
     env_file: .env
     depends_on:
       - mongo

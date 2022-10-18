@@ -66,6 +66,12 @@ service:
     port: 8011
     targetPort: 8011
 
+  webviewgenmanager: 
+    name: webviewgenmanager
+    type: NodePort
+    port: 8012
+    targetPort: 8012
+
 
 deployment:
   defaultImagePullPolicy: IfNotPresent
@@ -98,6 +104,10 @@ deployment:
   mobilegenmanager: 
     name: mobilegenmanager
     image: geppettotest/mobile-mobilegenmanager:1.0
+
+  webviewgenmanager: 
+    name: webviewgenmanager
+    image: geppettotest/mobile-webviewgenmanager:1.0
 
   camundapod:
      name: camundapod

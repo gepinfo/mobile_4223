@@ -48,6 +48,50 @@ module.exports = {
                 "credentialsParameter": ""
             }
         },          
+        {
+            "name": "webviewgenmanager-4223",
+            "image": `${process.env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/geppetto-generatedcode-mobile-4223-webviewgenmanager:latest`,
+            "memoryReservation": "300",
+            "resourceRequirements": null,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": "8012",
+                    "protocol": "tcp",
+                    "hostPort": "8012"
+                }
+            ],
+            "environmentFiles": null,
+            "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@mobile.local:27017/mobile_4223?authSource=admin"},{"name":"MONGO_DOMAIN","value":"mobile.local"},{"name":"CAMUNDAPOD_URL","value":"http://mobile.local:8080"},{"name":"SECURITYURL","value":"http://mobile.local:8003"},{"name":"AUTHPROXYURL","value":"http://mobile.local:8001"},{"name":"ADMINURL","value":"http://mobile.local:8004"},{"name":"CAMUNDAURL","value":"http://mobile.local:8002"},{"name":"GCAMURL","value":"http://mobile.local:8007"},{"name":"APIGATEWAY","value":"http://mobile.local:8000"}],
+            "secrets": null,
+            "mountPoints": [
+                {
+                  "readOnly": null,
+                  "containerPath": "/path/to/container",
+                  "sourceVolume": "mobile"
+                }
+              ],
+            "volumesFrom": null,
+            "hostname": null,
+            "user": null,
+            "workingDirectory": null,
+            "extraHosts": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/mobile",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs",
+                    "awslogs-create-group": "true"
+                }
+            },
+            "ulimits": null,
+            "dockerLabels": null,
+            "dependsOn": null,
+            "repositoryCredentials": {
+                "credentialsParameter": ""
+            }
+        },          
     ],
     "volumes": [
         {
